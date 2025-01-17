@@ -5,7 +5,7 @@
 ## **Tarefas e Responsabilidades**
 
 ### 1. **Organização do Circuito e Diagrama no Wokwi**
-**Responsável:** Pessoa 1  
+**Responsável:** Adson 
 - Criar e montar o diagrama do circuito no simulador Wokwi.
 - Conectar o teclado matricial 4x4 ao Raspberry Pi Pico W.
 - Conectar 3 LEDs RGB (utilizando pinos PWM) ao Raspberry Pi Pico W.
@@ -13,7 +13,7 @@
 - Verificar se todas as conexões estão corretas no Wokwi.
 
 ### 2. **Programação e Configuração do Teclado Matricial**
-**Responsável:** Pessoa 2  
+**Responsável:** Adson
 - Escrever o código para configurar e ler as teclas do teclado matricial 4x4.
 - Criar uma função que detecta as teclas pressionadas.
 - Testar se o teclado está sendo lido corretamente no código.
@@ -73,15 +73,15 @@
 
 | **Tarefa**                                     | **Responsável**
 |------------------------------------------------|------------|
-| Organização do Circuito e Diagrama no Wokwi     |           |
-| Programação e Configuração do Teclado Matricial |           | 
+| Organização do Circuito e Diagrama no Wokwi     |Adson      |
+| Programação e Configuração do Teclado Matricial |Adson      | 
 | Programação do Controle do LED 1                |           | 
 | Programação do Controle do LED 2                |           | 
 | Programação do Controle do LED 3                |           | 
-| Programação e Controle do Buzzer               |          | 
+| Programação e Controle do Buzzer                |           | 
 | Integração do Código: Função Principal          |           | 
-| Testes e Validação do Funcionamento            |           | 
-| Documentação e Relatório Final                 |           | 
+| Testes e Validação do Funcionamento             |           | 
+| Documentação e Relatório Final                  |           | 
 
 ---
 
