@@ -88,7 +88,7 @@ int main() {
             case 'D':
                 // Liga todos os LED
             break;
-            case '0':
+            case '0': // Desliga todos os leds
                 gpio_put(GPIO_RED_LED,0);
                 gpio_put(GPIO_GREEN_LED,0);
                 gpio_put(GPIO_BLUE_LED,0);
