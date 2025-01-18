@@ -78,7 +78,11 @@ int main() {
                 // Liga LED azul
             break;
             case 'C':
-                // Liga LED verde
+                // Pisca LED verde
+                printf("Piscando LED verde \n");
+                gpio_put(GPIO_GREEN_LED, 1);
+                sleep_ms(1000);
+                gpio_put(GPIO_GREEN_LED, 0);
             break;
             case 'D':
                 // Liga todos os LED
