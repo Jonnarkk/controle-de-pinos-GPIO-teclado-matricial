@@ -51,12 +51,7 @@ char read_keypad(){
 	}
   return '\0';
 }
-// Função para ligar led's
-void liga_led(uint gpio){
-    gpio_put(GPIO_RED_LED, gpio == GPIO_RED_LED);
-    gpio_put(GPIO_BLUE_LED, gpio == GPIO_BLUE_LED);
-    gpio_put(GPIO_GREEN_LED, gpio == GPIO_GREEN_LED);
-}
+
 //Função principal
 int main() {
   gpio_init(GPIO_RED_LED);
@@ -79,8 +74,12 @@ int main() {
             case 'A':
                 // Liga LED vermelho
             break;
-            case 'B':
-                liga_led(GPIO_BLUE_LED); // Liga o led azul e desliga os outros
+            case 'B': // Liga o led azul por 1s
+                 
+                 printf("Piscando LED azul \n");
+                 gpio_put(GPIO_BLUE_LED, 1); // liga o led
+                 sleep_ms(1000); // seta duracao de 1s
+                 gpio_put(GPIO_BLUE_LED, 0); // desliga o led
             break;
             case 'C':
                 // Liga LED verde
@@ -88,11 +87,6 @@ int main() {
             case 'D':
                 // Liga todos os LED
             break;
-            case '0': // Desliga todos os leds
-                gpio_put(GPIO_RED_LED,0);
-                gpio_put(GPIO_GREEN_LED,0);
-                gpio_put(GPIO_BLUE_LED,0);
-                break;
             case '#':
                 // Ativa o buzzer
             break;
