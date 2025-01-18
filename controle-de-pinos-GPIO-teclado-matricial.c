@@ -77,9 +77,10 @@ int main() {
     if (key != '\0') {
         switch(key) {
             case 'A':
+                printf("Piscando LED vermelho \n");
                 gpio_put(GPIO_RED_LED, 1);
-                gpio_put(GPIO_BLUE_LED, 0);
-                gpio_put(GPIO_GREEN_LED, 0);
+                sleep_ms(1000);
+                gpio_put(GPIO_RED_LED, 0);
                 break;
             case 'B':
                 // Liga LED azul
