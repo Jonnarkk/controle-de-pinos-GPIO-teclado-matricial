@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "pico/bootrom.h"
 
 // Define o LEDs de saída
 #define GPIO_RED_LED 13
@@ -102,6 +103,10 @@ int main() {
             break;
             case '#':
                 // Ativa o buzzer
+            break;
+            case '*':
+                // Entra no modo BOOTSEL
+                reset_usb_boot(0, 0);
             break;
         }
         printf("Tecla pressionada: %c\n", key);  // Imprime a tecla no console
