@@ -77,16 +77,25 @@ int main() {
     if (key != '\0') {
         switch(key) {
             case 'A':
-                printf("Piscando LED vermelho \n");
-                gpio_put(GPIO_RED_LED, 1);
-                sleep_ms(1000);
-                gpio_put(GPIO_RED_LED, 0);
-                break;
-            case 'B':
-                // Liga LED azul
+                 // Pisca LED vermelho
+                 printf("Piscando LED vermelho \n");
+                 gpio_put(GPIO_RED_LED, 1); // liga o led
+                 sleep_ms(1000); // seta duracao de 1s
+                 gpio_put(GPIO_RED_LED, 0); // desliga o led
+            break;
+            case 'B': // Liga o led azul por 1s
+                 
+                 printf("Piscando LED azul \n");
+                 gpio_put(GPIO_BLUE_LED, 1); // liga o led
+                 sleep_ms(1000); // seta duracao de 1s
+                 gpio_put(GPIO_BLUE_LED, 0); // desliga o led
             break;
             case 'C':
-                // Liga LED verde
+                // Pisca LED verde
+                printf("Piscando LED verde \n");
+                gpio_put(GPIO_GREEN_LED, 1);
+                sleep_ms(1000);
+                gpio_put(GPIO_GREEN_LED, 0);
             break;
             case 'D':
                 // Liga todos os LED
