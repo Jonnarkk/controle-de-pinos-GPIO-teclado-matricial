@@ -74,8 +74,12 @@ int main() {
             case 'A':
                 // Liga LED vermelho
             break;
-            case 'B':
-                // Liga LED azul
+            case 'B': // Liga o led azul por 1s
+                 
+                 printf("Piscando LED azul \n");
+                 gpio_put(GPIO_BLUE_LED, 1); // liga o led
+                 sleep_ms(1000); // seta duracao de 1s
+                 gpio_put(GPIO_BLUE_LED, 0); // desliga o led
             break;
             case 'C':
                 // Liga LED verde
