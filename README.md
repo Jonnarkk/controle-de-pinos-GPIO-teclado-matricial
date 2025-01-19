@@ -20,40 +20,40 @@
 - Integrar a leitura das teclas ao fluxo principal do programa.
 
 ### 3. **Programação da Função de Controle do LED 1 (RGB)**
-**Responsável:** Pessoa 3  
+**Responsável:** Guilherme Miller 
 - Escrever as funções para controlar o LED 1 (RGB), acendendo as cores individualmente.
 - Integrar as funções de controle do LED 1 com a detecção de teclas do teclado matricial.
 - Testar as cores do LED 1 para garantir o funcionamento correto.
 - Documentar o mapeamento das teclas para o controle do LED 1.
 
 ### 4. **Programação da Função de Controle do LED 2 (RGB)**
-**Responsável:** Pessoa 4  
+**Responsável:** Dorivaldo 
 - Escrever as funções para controlar o LED 2 (RGB), acendendo as cores individualmente.
 - Integrar as funções de controle do LED 2 com a detecção de teclas do teclado matricial.
 - Testar as cores do LED 2 para garantir o funcionamento correto.
 - Documentar o mapeamento das teclas para o controle do LED 2.
 
 ### 5. **Programação da Função de Controle do LED 3 (RGB)**
-**Responsável:** Pessoa 5  
+**Responsável:** Isabella  
 - Escrever as funções para controlar o LED 3 (RGB), acendendo as cores individualmente.
 - Integrar as funções de controle do LED 3 com a detecção de teclas do teclado matricial.
 - Testar as cores do LED 3 para garantir o funcionamento correto.
 - Documentar o mapeamento das teclas para o controle do LED 3.
 
 ### 6. **Programação e Controle do Buzzer**
-**Responsável:** Pessoa 6  
+**Responsável:** Arthur  
 - Escrever as funções para acionar e desligar o buzzer, dependendo da tecla pressionada.
 - Testar a funcionalidade do buzzer para garantir que ele emite som ao pressionar as teclas configuradas.
 - Integrar o controle do buzzer com a leitura do teclado matricial.
 
 ### 7. **Integração do Código: Função Principal**
-**Responsável:** Pessoa 7  
+**Responsável:** Ricardo  
 - Integrar todas as funções (controle de LEDs, buzzer e teclado) em um único código de execução.
 - Escrever a função principal que verifica continuamente o estado das teclas pressionadas e executa as ações correspondentes.
 - Garantir que todas as funções de controle dos LEDs e buzzer sejam acionadas corretamente com base nas teclas do teclado matricial.
 
 ### 8. **Testes e Validação do Funcionamento do Circuito**
-**Responsável:** Pessoa 8  
+**Responsável:** Ricardo
 - Organizar e reestruturar todo o código tornando-o funcional com todas as funções.
 - Realizar testes de integração entre o hardware (simulação no Wokwi) e o código.
 - Verificar se todas as funções estão respondendo corretamente às teclas pressionadas.
@@ -61,7 +61,7 @@
 - Identificar e corrigir qualquer erro que surja durante os testes.
 
 ### 9. **Documentação e Relatório Final**
-**Responsável:** Pessoa 9  
+**Responsável:** Canila e Jabson 
 - Criar a documentação explicando a montagem do circuito no Wokwi, as funções programadas e o mapeamento das teclas.
 - Documentar o fluxo do código, destacando as responsabilidades de cada função.
 - Elaborar o relatório final com a explicação do processo de desenvolvimento, problemas encontrados e soluções implementadas.
@@ -73,16 +73,19 @@
 
 | **Tarefa**                                     | **Responsável**
 |------------------------------------------------|------------|
-| Organização do Circuito e Diagrama no Wokwi     |Adson      |
-| Programação e Configuração do Teclado Matricial |Adson      | 
-| Programação do Controle do LED 1                |           | 
-| Programação do Controle do LED 2                |           | 
-| Programação do Controle do LED 3                |           | 
-| Programação e Controle do Buzzer                |           | 
-| Integração do Código: Função Principal          |           | 
-| Testes e Validação do Funcionamento             |           | 
-| Documentação e Relatório Final                  |           | 
+| Organização do Circuito e Diagrama no Wokwi     |Adson            |
+| Programação e Configuração do Teclado Matricial |Adson            | 
+| Programação do Controle do LED 1                |Guilherme Miller | 
+| Programação do Controle do LED 2                |Dorivaldo        | 
+| Programação do Controle do LED 3                |Isabella         | 
+| Programação e Controle do Buzzer                |Arthur           | 
+| Integração do Código: Função Principal          |Ricardo          | 
+| Testes e Validação do Funcionamento             |Ricardo          | 
+| Documentação e Relatório Final                  |Canila e Jabson  | 
 
 ---
+## **Link com a produção do vídeo:**
+https://youtu.be/fn3x_e9NXnQ
 
+![Projeto](https://github.com/user-attachments/assets/73b4b073-a170-4230-b83e-6b1ae70795ed)
 
