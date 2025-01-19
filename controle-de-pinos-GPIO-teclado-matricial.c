@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "pico/bootrom.h"
+#include "hardware/pwm.h"
 
 // Define o LEDs de saída
 #define GPIO_RED_LED 13
@@ -22,6 +23,35 @@ char key_map[ROWS][COLS] = {
     {'4', '5', '6', 'B'},
     {'7', '8', '9', 'C'},
     {'*', '0', '#', 'D'}};
+
+void pwm_init_buzzer(uint pin)
+{
+    gpio_set_function(pin, GPIO_FUNC_PWM);
+    uint slice_num = pwm_gpio_to_slice_num(pin);
+    pwm_config config = pwm_get_default_config();
+    pwm_init(slice_num, &config, true);
+    pwm_set_gpio_level(pin, 0); // Desativa o buzzer
+}
+
+// Função para gerar uma frequência no buzzer
+void beep(uint note, uint duration)
+{
+    uint slice_num = pwm_gpio_to_slice_num(GPIO_Buzzer);
+    uint32_t clock = clock_get_hz(clk_sys);
+
+    // Calcula divisor de clock para a frequência desejada
+    uint32_t divisor = clock / (note * 4096);
+    pwm_set_clkdiv(slice_num, divisor);
+
+    // Define duty cycle para 50%
+    pwm_set_gpio_level(GPIO_Buzzer, 2048);
+
+    sleep_ms(duration); // Dura o tempo necessário
+
+    // Desativa o buzzer
+    pwm_set_gpio_level(GPIO_Buzzer, 0);
+    sleep_ms(20); // Pequena pausa entre notas
+}
 
 // Função para inicializar saídas
 void inicializar_led()
@@ -93,6 +123,7 @@ int main()
   stdio_init_all();
   inicializar_led();
   keypad_init();
+  pwm_init_buzzer(GPIO_Buzzer);
 
   while (true)
   {
@@ -122,8 +153,10 @@ int main()
         acender_todos_leds(1000);
         break;
       case '#':
-        // Ativa o buzzer
-        break;
+        // Ativa o buzzer por 2 seg
+        beep(2000, 2000);
+          printf("Buzzer ligado por 2 segundos.\n");
+          break;
       case '*':
         // Entra no modo BOOTSEL
         reset_usb_boot(0, 0);
