@@ -1,4 +1,73 @@
-# Plano de Trabalho: Controle de Pinos GPIO com Teclado Matricial, LEDs e Buzzer
+# Projeto: Controle de LEDs e Buzzer com Teclado Matricial no Raspberry Pi Pico W
+
+## Descrição Geral
+Este projeto utiliza um Raspberry Pi Pico W para controlar LEDs RGB e um buzzer através de um teclado matricial 4x4. O código foi implementado em C e integra diversas funcionalidades que são acionadas por meio das teclas do teclado. Além disso, o programa inclui a opção de reinicializar o microcontrolador no modo BOOTSEL.
+
+## Funcionalidades Principais
+
+### 1. Controle de LEDs RGB
+O sistema utiliza três LEDs RGB conectados aos seguintes pinos GPIO do Raspberry Pi Pico W:
+- **LED Vermelho:** GPIO 13
+- **LED Verde:** GPIO 11
+- **LED Azul:** GPIO 12
+
+#### Comandos Disponíveis:
+- **Tecla A:** Pisca o LED vermelho por 1 segundo.
+- **Tecla B:** Pisca o LED azul por 1 segundo.
+- **Tecla C:** Pisca o LED verde por 1 segundo.
+- **Tecla D:** Acende todos os LEDs simultaneamente por 1 segundo.
+
+### 2. Controle do Buzzer
+O buzzer está conectado ao GPIO 16 e é controlado utilizando o módulo PWM do Raspberry Pi Pico W.
+
+#### Comando Disponível:
+- **Tecla #:** Ativa o buzzer por 2 segundos emitindo um som de 2000 Hz.
+
+### 3. Leitura do Teclado Matricial
+Um teclado matricial 4x4 é utilizado para receber comandos. As linhas e colunas estão conectadas aos seguintes pinos GPIO:
+- **Linhas:** GPIO 9, 8, 7, 6
+- **Colunas:** GPIO 5, 4, 3, 2
+
+O mapeamento de teclas é o seguinte:
+
+| 1 | 2 | 3 | A |
+|---|---|---|---|
+| 4 | 5 | 6 | B |
+| 7 | 8 | 9 | C |
+| * | 0 | # | D |
+
+### 4. Modo BOOTSEL
+- **Tecla *:** Reinicia o microcontrolador e o coloca no modo BOOTSEL para facilitar o upload de um novo firmware.
+
+## Como Utilizar
+1. Conecte os LEDs RGB, buzzer e teclado matricial ao Raspberry Pi Pico W de acordo com os pinos especificados no código.
+2. Compile e carregue o código no Raspberry Pi Pico W utilizando uma ferramenta compatível (como o SDK do Raspberry Pi).
+3. Abra o monitor serial para visualizar as mensagens de depuração e interagir com o sistema.
+4. Pressione as teclas no teclado matricial para acionar as funcionalidades correspondentes:
+   - `A`, `B`, `C`, `D` para controlar os LEDs.
+   - `#` para ativar o buzzer.
+   - `*` para reiniciar o dispositivo no modo BOOTSEL.
+
+## Dependências
+- Biblioteca `pico/stdlib.h` para funções básicas de controle de hardware.
+- Biblioteca `hardware/pwm.h` para controle de sinais PWM (usado pelo buzzer).
+- Biblioteca `pico/bootrom.h` para acesso ao modo BOOTSEL.
+
+## Observações
+- Certifique-se de que o hardware está conectado corretamente antes de ligar o microcontrolador.
+- O tempo de debounce para o teclado foi configurado em 200 ms para evitar leituras repetidas.
+
+## Exemplo de Saída no Monitor Serial
+Quando uma tecla é pressionada, as seguintes mensagens serão exibidas no console:
+- `Piscando LED vermelho` (Tecla A)
+- `Piscando LED azul` (Tecla B)
+- `Piscando LED verde` (Tecla C)
+- `Acendendo todos os LEDs` (Tecla D)
+- `Buzzer ligado por 2 segundos` (Tecla #)
+- `Tecla pressionada: <tecla>`
+
+
+# Plano de Trabalho
 
 ### Divisão de Tarefas entre 9 Pessoas
 
